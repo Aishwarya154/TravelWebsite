@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Link to JavaScript file -->
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <!-- Header with logo and navigation menu -->
+    <header>
+        <div class="logo">
+            <img src="BA logo.png" alt="Travel Image 1">
+        </div>
+    
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Holiday</a></li>
+                <li><a href="#">Career</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero section with image carousel -->
+    <section class="hero-section">
+        <div class="carousel">
+            <img src="image1.png" alt="Travel Image 1">
+            <img src="image2.png" alt="Travel Image 2">
+            <img src="image3.png" alt="Travel Image 3">
+        </div>
+        <h1>Explore the World with Us!</h1>
+        <button class="cta">Book Now</button>
+    </section>
+
+<!-- Tabs section -->
+<section class="tabs-section">
+    <div class="tabs">
+        <button class="tab" onclick="showTabContent('flights')">
+            <i class="fas fa-plane"></i> Flights
+        </button>
+        <button class="tab" onclick="showTabContent('hotels')">
+            <i class="fas fa-hotel"></i> Hotels
+        </button>
+        <button class="tab" onclick="showTabContent('holidays')">
+            <i class="fas fa-umbrella-beach"></i> Holidays
+        </button>
+    </div>
+    <!-- Tab content -->
+    <div id="flights" class="tab-content">
+        <div class="flights-gallery">
+            <img src="tab1.png" alt="Flight Image 1">
+            <!-- Add more images if needed -->
+        </div>
+    </div>
+    <div id="hotels" class="tab-content">
+        <div class="hotels-gallery">
+            <img src="tab2.png" alt="Hotel Image 1">
+            <img src="images/hotel2.jpg" alt="Hotel Image 2">
+            <img src="images/hotel3.jpg" alt="Hotel Image 3">
+        </div>
+    </div>
+    <div id="holidays" class="tab-content">
+        <div class="holidays-gallery">
+            <img src="tab3.png" alt="Holiday Image 1">
+            <img src="images/holiday2.jpg" alt="Holiday Image 2">
+            <img src="images/holiday3.jpg" alt="Holiday Image 3">
+        </div>
+    </div>
+</section>
+
+<style>
+/* Tabs Section */
+.tabs-section {
+    margin: 20px;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    background: #f0f0f0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #333;
+    transition: all 0.3s;
+    font-size: 16px;
+}
+
+.tab i {
+    margin-right: 8px;
+}
+
+/* Tab hover effects */
+.tab:hover {
+    background: #007BFF;
+    color: #fff;
+}
+
+/* Active tab */
+.tab.active {
+    background: #007BFF;
+    color: #fff;
+}
+
+/* Tab content */
+.tab-content {
+    display: none;
+    padding: 20px;
+    margin-top: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Show active tab content */
+.tab-content.active {
+    display: block;
+}
+
+/* Image styling */
+img {
+    max-width: 100%;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 8px;
+}
+
+/* Gallery styling */
+.flights-gallery, .hotels-gallery, .holidays-gallery {
+    display: flex;
+    gap: 10px;
+}
+</style>
+
+<script>
+function showTabContent(tabId) {
+    const tabs = document.querySelectorAll('.tab');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    // Remove active class from all tabs and contents
+    tabs.forEach(tab => tab.classList.remove('active'));
+    tabContents.forEach(content => content.classList.remove('active'));
+
+    // Add active class to the clicked tab and corresponding content
+    document.querySelector(`.tab[onclick="showTabContent('${tabId}')"]`).classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+<!-- Domestic Tour Package section -->
+<section class="tour-package">
+    <h2>Domestic Tour Packages</h2>
+    <div class="package-container">
+        <div class="package-slider">
+            <!-- Package 1 -->
+            <div class="package">
+                <img src="And.png" alt="Andaman and Nicobar Islands">
+                <h3 class="package-title">Andaman and Nicobar Islands</h3>
+                <p class="package-price">$800</p>
+            </div>
+            <!-- Package 2 -->
+            <div class="package">
+                <img src="ker.png" alt="Kerala">
+                <h3 class="package-title">Kerala</h3>
+                <p class="package-price">$600</p>
+            </div>
+            <!-- Package 3 -->
+            <div class="package">
+                <img src="kashmir.png" alt="Kashmir">
+                <h3 class="package-title">Kashmir</h3>
+                <p class="package-price">$750</p>
+            </div>
+            <!-- Repeat packages for the slider loop -->
+            <div class="package">
+                <img src="And.png" alt="Andaman and Nicobar Islands">
+                <h3 class="package-title">Andaman and Nicobar Islands</h3>
+                <p class="package-price">$800</p>
+            </div>
+            <div class="package">
+                <img src="ker.png" alt="Kerala">
+                <h3 class="package-title">Kerala</h3>
+                <p class="package-price">$600</p>
+            </div>
+            <div class="package">
+                <img src="kashmir.png" alt="Kashmir">
+                <h3 class="package-title">Kashmir</h3>
+                <p class="package-price">$750</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Tour package section */
+.tour-package {
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Package container */
+.package-container {
+    overflow: hidden;
+}
+
+/* Package slider */
+.package-slider {
+    display: flex;
+    gap: 20px;
+    height: 400px;
+    animation: scrollPackages 20s linear infinite;
+}
+
+/* Keyframes for horizontal scrolling animation */
+@keyframes scrollPackages {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Individual package styles */
+.package {
+    flex: none;
+    width: 300px; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+}
+
+/* Image styles */
+img {
+    width: 100%;
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Maintain aspect rati
+
+
+<style>
+/* Tour package section */
+.tour-package {
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Package container */
+.package-container {
+    overflow: hidden;
+}
+
+/* Package slider */
+.package-slider {
+    display: flex;
+    gap: 20px;
+    animation: scrollPackages 20s linear infinite;
+}
+
+/* Keyframes for horizontal scrolling animation */
+@keyframes scrollPackages {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Individual package styles */
+.package {
+    flex: none;
+    width: 300px; /* Adjust width as needed */
+    height: 100px; /* Increase height of image container */
+}
+
+/* Image styles */
+img {
+    width: 100%;
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+</style>
+
+
+
+
+<section class="tour-package">
+    <h2>International Tour Packages</h2>
+    <div class="package-container">
+        <div class="package-slider">
+            <!-- Package 1 -->
+            <div class="package">
+                <img src="bali.png" alt="Package 1">
+                <h3 class="package-title">Bali</h3>
+                <p class="package-price">$1200</p>
+            </div>
+            <!-- Package 2 -->
+            <div class="package">
+                <img src="dubai.png" alt="Package 2">
+                <h3 class="package-title">Dubai</h3>
+                <p class="package-price">$1500</p>
+            </div>
+            <!-- Add more packages as needed -->
+            <div class="package">
+                <img src="maldives.png" alt="Package 3">
+                <h3 class="package-title">Maldives</h3>
+                <p class="package-price">$1800</p>
+            </div>
+            <!-- Repeat packages for the slider loop -->
+            <div class="package">
+                <img src="dubai.png" alt="Package 1">
+                <h3 class="package-title">Dubai</h3>
+                <p class="package-price">$1500</p>
+            </div>
+            <div class="package">
+                <img src="bali.png" alt="Package 2">
+                <h3 class="package-title">Bali</h3>
+                <p class="package-price">$1200</p>
+            </div>
+            <div class="package">
+                <img src="maldives.png" alt="Package 3">
+                <h3 class="package-title">Maldives</h3>
+                <p class="package-price">$1800</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Tour package section */
+.tour-package {
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Package container */
+.package-container {
+    overflow: hidden;
+}
+
+/* Package slider */
+.package-slider {
+    display: flex;
+    gap: 20px;
+    height: 400px; /* Adjust the height as needed */
+    animation: scrollPackages 20s linear infinite;
+}
+
+/* Keyframes for horizontal scrolling animation */
+@keyframes scrollPackages {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Individual package styles */
+.package {
+    flex: none;
+    width: 300px; /* Adjust width as needed */
+    height: 400px; /* Adjust height as needed */
+}
+
+/* Image styles */
+img {
+    width: 100%;
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Package title styles */
+.package-title {
+    color: red; /* Set the text color to red */
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Package price styles */
+.package-price {
+    text-align: center;
+    margin-top: 5px;
+}
+</style>
+
+
+<style>
+/* Tour package section */
+.tour-package {
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Package container */
+.package-container {
+    overflow: hidden;
+}
+
+/* Package slider */
+.package-slider {
+    display: flex;
+    gap: 20px;
+    animation: scrollPackages 20s linear infinite;
+}
+
+/* Keyframes for horizontal scrolling animation */
+@keyframes scrollPackages {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Individual package styles */
+.package {
+    flex: none;
+    width: 300px; /* Adjust width as needed */
+    height: 400px; /* Increase height of image container */
+}
+
+/* Image styles */
+img {
+    width: 100%;
+    height: 100%; /* Ensure image fills the container */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+</style>
+
+
+    <!-- Exclusive Features section -->
+<section class="exclusive-features">
+    <h2>Exclusive Features</h2>
+    <div class="features-container">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+            <h3>Instant Booking</h3>
+            <p>Book your travel instantly and hassle-free with just a few clicks.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="feature-card">
+            <h3>Incredible Deals</h3>
+            <p>Get the best deals on flights, hotels, and holiday packages.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="feature-card">
+            <h3>24*7 Support</h3>
+            <p>Our customer support team is available around the clock to assist you.</p>
+        </div>
+        <!-- Add more features as needed -->
+    </div>
+</section>
+
+
+    <!-- Signup section -->
+    <section class="signup-section">
+        <h2>Stay Updated!</h2>
+        <form id="signup-form">
+            <input type="text" placeholder="Your name" required>
+            <input type="email" placeholder="Your email" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">FAQ</a>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+            </div>
+            <p>© 2024 TravelSite. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

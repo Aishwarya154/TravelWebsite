@@ -1,0 +1,416 @@
+/* File: styles.css */
+/* General styling */
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    /* Adjust body padding for smaller screens */
+    body {
+        padding: 10px;
+    }
+
+    /* Adjust header styles */
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    /* Hero section */
+    .hero-section {
+        padding: 20px;
+    }
+
+    /* Tabs section */
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Package slider */
+    .package-slider {
+        flex-direction: column;
+        overflow-x: scroll;
+    }
+
+    /* Features container */
+    .features-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Signup section */
+    .signup-section input,
+    .signup-section button {
+        width: 100%;
+    }
+
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Package container */
+    .package-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Adjust for mobile devices */
+@media (max-width: 480px) {
+    /* Adjust font sizes */
+    body {
+        font-size: 14px;
+    }
+
+    /* Adjust header */
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    nav a {
+        padding: 3px 5px;
+    }
+
+    /* Tabs */
+    .tab {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+
+    /* Package titles and prices */
+    .package h3,
+    .package p {
+        font-size: 12px;
+    }
+}
+/* General styles for images */
+img {
+    max-width: 100%; /* Ensures images adjust to the width of their container */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* Responsive media queries for images and other sections */
+@media (max-width: 768px) {
+    /* Adjust hero section image */
+    .hero-section img {
+        height: auto; /* Removes fixed height for better responsiveness */
+    }
+
+    /* Adjust tour package images */
+    .package-container {
+        flex-direction: column; /* Aligns packages vertically on smaller screens */
+    }
+
+    /* Adjust tour package image sizes */
+    .package img {
+        height: auto; /* Removes fixed height */
+        width: 100%; /* Ensures images scale properly */
+        object-fit: cover; /* Keeps images in proportion */
+    }
+    
+    /* Adjust international package slider */
+    .package-slider {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    /* Adjust package width and height for smaller screens */
+    .package {
+        width: 100%; /* Use full width for smaller screens */
+        height: auto; /* Remove fixed height */
+        margin-bottom: 10px; /* Add space between packages */
+    }
+}
+
+/* Adjust further for smaller mobile screens */
+@media (max-width: 480px) {
+    /* Hero section adjustments */
+    .hero-section img {
+        height: auto; /* Allow height to adjust */
+    }
+    
+    /* Package slider changes */
+    .package-slider {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    /* Package width and height adjustments */
+    .package {
+        width: 100%; /* Use full width for smaller screens */
+        height: auto; /* Remove fixed height */
+        margin-bottom: 10px; /* Add space between packages */
+    }
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #0066cc;
+    color: white;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: #004080;
+    border-radius: 5px;
+}
+
+/* Hero section styling */
+.hero-section {
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+.carousel img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: none;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+.cta {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.cta:hover {
+    background-color: #cc5200;
+}
+
+/* Tabs section styling */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tab {
+    background-color: #f2f2f2;
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab:hover {
+    background-color: #e0e0e0;
+}
+
+.tab-content {
+    display: none;
+    margin: 20px;
+}
+
+/* Tour package section styling */
+.tour-package {
+    padding: 20px;
+}
+
+.package-container {
+    display: flex;
+    overflow-x: auto;
+}
+
+.package {
+    margin-right: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.package img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.package h3 {
+    margin-top: 10px;
+}
+
+.package p {
+    margin-top: 5px;
+    color: #ff6600;
+}
+
+/* Exclusive features styling */
+.exclusive-features {
+    padding: 20px;
+}
+
+.exclusive-features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.exclusive-features li {
+    margin-bottom: 10px;
+}
+
+/* Signup section styling */
+.signup-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.signup-section form {
+    display: inline-block;
+    text-align: left;
+}
+
+.signup-section input,
+.signup-section button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 200px;
+}
+
+.signup-section button {
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.signup-section button:hover {
+    background-color: #004080;
+}
+
+/* Footer styling */
+footer {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+}
+
+.footer-links a {
+    margin-right: 10px;
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-media a {
+    margin-right: 10px;
+}
+
+.social-media img {
+    width: 20px;
+    height: 20px;
+}
+/* Exclusive Features section */
+.exclusive-features {
+    padding: 20px;
+    background-color: #e0f7fa; /* Light cyan background */
+}
+
+.exclusive-features h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around; /* Distribute the cards evenly */
+    flex-wrap: wrap; /* Wrap the cards to the next line if needed */
+    gap: 20px; /* Add space between the cards */
+    color: blue; /* Set the text color to blue */
+    font-weight: bold; /* Make the text bold */
+}
+
+
+/* Card styles */
+.feature-card {
+    background-color: white; /* White background for the card */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: calc(33% - 20px); /* Adjust the width as needed */
+    text-align: center; /* Center the text */
+}
+
+.feature-card h3 {
+    margin-bottom: 10px; /* Space below the heading */
+    color: #00796b; /* Teal color */
+}
+
+.feature-card p {
+    color: #555; /* Dark gray text color */
+    font-size: 14px; /* Adjust font size as needed */
+}
+.feature-card i {
+    font-size: 24px; /* Adjust the icon size as needed */
+    color: #00796b; /* Icon color */
+    margin-bottom: 10px; /* Space below the icon */
+}
+
+.feature-card p {
+    color: #555; /* Dark gray text color */
+    font-size: 14px; /* Adjust font size as needed */
+}
